@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web-технологии</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<!Добавление ссылки на источник, при копировании текста с сайта>
+<script> document.oncopy = function () 
+  { var bodyElement = document.body; 
+    var selection = getSelection(); 
+    var href = document.location.href; 
+    var copyright = "<br><br>Взято с сайта: <a href='"+ href +"'>" + href + "</a><br>© Максим Звягинцев"; 
+    var text = selection + copyright; 
+    var divElement = document.createElement('div'); 
+    divElement.style.position = 'absolute'; 
+    divElement.style.left = '-99999px'; 
+    divElement.innerHTML = text; bodyElement.appendChild(divElement); 
+    selection.selectAllChildren(divElement); 
+    setTimeout(function() { bodyElement.removeChild(divElement); }, 0); }; 
+  </script>
+<body>
+ 
+ <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+  	<div class="navbar-header">
+  	 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  	 <span class="icon-bar"></span>
+  	 <span class="icon-bar"></span>
+  	 <span class="icon-bar"></span>
+  	 </button>
+  	<a class="navbar-brand" href="index.html">Web&nbsp;TECHN<i class="fa fa-globe" aria-hidden="true"></i>L<i class="fa fa-globe" aria-hidden="true"></i>GY</a>
+
+  	</div>
+  	
+  	<div class="navbar-collapse collapse">
+  		<ul class="nav navbar-nav navbar-right">
+      <li > <a href="index.html">Главная</a></li>
+      <li> <a href="internet.html">Internet</a></li>
+      <li > <a href="http.html">HTTP</a></li>
+      <li> <a href="html.html">HTML</a></li>
+      <li class="active"> <a href="css.html">CSS</a></li>  	
+      <li> <a href="test.html">[Laba 3]</a></li>  
+  		</ul>
+  	</div>
+  </div>
+ </div>
+
+<div id="headerwrap">
+	<div class="container">
+		<div class="row centered">
+			<div class="col-lg-8 col-lg-offset-2">
+<h1>Что такое CSS и где его используют</h1>
+<p>Процесс обучения веб-дизайну начинается с вопроса о том, что такое CSS. Ведь именно этот язык позволяет полностью изменять внешний вид ваших документов. Предлагая грамотную альтернативу устаревшим тегам, используемым в обычном гипертекстовом языке, CSS дает возможность гибко настраивать все значимые части страницы. Консорциум всемирной паутины рекомендует использовать именно каскадные таблицы стилей для определения дизайна веб-документов. Из этой статьи вы узнаете, что такое CSS, а также где он применяется.</p>
+
+<h1>Определение</h1>
+<img src="images/css1.png" width="15%" height="15%"  align="right" vspace="5" hspace="5"> 
+<p>CSS является аббревиатурой от английского Cascading Style Sheets, что в переводе на русский значит "каскадные таблицы стилей". Как таковым отдельным языком программирования CSS нельзя считать, так как он не имеет значения без документов, построенных на HTML или XHTML. Стили CSS неразрывно связаны с интернет-страницами. Современная всемирная паутина имела бы слишком тусклый и невзрачный вид без этих самых таблиц. Они позволяют вносить уникальные изменения и делать невероятный дизайн страниц, используя довольно простой язык. CSS был опубликован в 1996 году, и с тех пор имеет огромную популярность, ведь логической замены этих таблиц стилей не существует. Все файлы, написанные на этом языке, имеют расширение .css. Разработчики при создании каскадных таблиц стилей пытались как можно больше упростить работу веб-дизайнеров. При этом была поставлена основная цель: разделить логическую структуру документа, которая управляется при помощи HTML или XHTML, и описать внешний вид. Каскадные таблицы стилей позволяют изменять шрифт, цвет, фон, положение элементов, интервалы и многое другое.</p>
+
+<h1>Сущность</h1>
+<p>CSS-стили устроены по предельно простому принципу. Здесь нет сложных правил и заумных терминов. Достаточно выбрать нужный элемент и назначить к нему необходимое свойство. То есть можно взять тег
+и изменить шрифт и цвет символов, которые находятся внутри него. При этом каждому такому элементу документа будет присвоено данное свойство. Нет необходимости присваивать значение всем тегам отдельно. Можно использовать более широкомасштабные цели, например, сразу назначить свойство ко всему документу, определив свойство к элементу "body". Или стилизовать отдельный фрагмент через специальные id-идентификаторы или селекторы.</p>
+
+<h1>Применение</h1>
+<p>Использовать каскадные стили можно тремя способами:<br>
+1) На уровне документа. Можно назначать краткую запись в самом теге. Такой вариант лучше применять, когда нет нужды повторять данный стиль. <br>
+2) Внутри документа. Если у вас одностраничный сайт, то можно легко вписывать правила каскадных таблиц в верхней части документа. В данном случае все определения помещаются в тег &ltstyle&gt, который входит в &lthead&gt<br>
+3) Отдельно. То, ради чего и создавался данный язык. Если у вас имеется множество страниц или даже сайтов, где используется один дизайн, можно привязать к каждому документу один CSS-файл, который и будет определять стиль. Привязка осуществляется при помощи тега &ltlink&gt
+</p>
+
+<h1>Заключение</h1>
+<p>Вопросу о том, что такое CSS, посвящаются целые книги, проводятся семинары. И, естественно, невозможно полностью раскрыть данную тему в одной статье. Чтобы полностью овладеть этим языком, нужно потратить много времени. Но положительный результат будет обязательно. Поэтому не стесняйтесь и чаще задавайтесь вопросом о том, что такое CSS, а после увлекательного изучения вы сможете сами создавать свой стиль.</p>
+<div class="Avtor">
+<b>(с)Информация взята <a href="http://fb.ru/article/94601/chto-takoe-css-i-gde-ego-ispolzuyut#image184048">с сайта FB <br></a>
+</b>
+</div>	
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="f">
+<div class="container">
+<div class="row centered">
+	<a href="https://vk.com/xd_makcum"><i class="fa fa-vk fa-2x"></i></a>
+	<a href="https://www.instagram.com/zvg_m_a/"><i class="fa fa-instagram fa-2x"></i></a>
+</div>
+</div>
+</div>
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+$(document).ready(function(){
+ $.fn.animate_Text = function() {
+  var string = this.text();
+  return this.each(function(){
+   var $this = $(this);
+   $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+   $this.find('span.new').each(function(i, el){
+    setTimeout(function(){ $(el).addClass('div_opacity'); }, 20 * i);
+   });
+  });
+ };
+ $('#example').show();
+ $('#example').animate_Text();
+});
+</script>
+</body>
+</html>

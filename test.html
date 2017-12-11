@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web-технологии</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+  <body>
+   <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Web&nbsp;TECHN<i class="fa fa-globe" aria-hidden="true"></i>L<i class="fa fa-globe" aria-hidden="true"></i>GY</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+   
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="headerwrap">
+  <div class="container">
+
+     
+      <input type="button" class="buttonCreate" value="Создать список  " onclick="createDOM(event,'ol', 'divCreate', 'buttonCreate')">
+      <div class="divCreate" ></div>
+
+      <input type="button" class="buttonCreate" value="Создать таблицу" onclick="createDOM(event,'tr', 'divCreate', 'buttonCreate')" alt="1">
+      <input type="button" value="Ʌ" alt="2" onclick="sortArray('up')"><input type="button" value="V" alt="3" onclick="sortArray('down')">
+      <div class="divCreate" ></div>
+      
+
+
+
+      <img src="images/web.png" class="picture" style="width: 50px; height: 50px">
+      <input type="button" value="+" onclick="sizeImg('width', '+')">
+      <input type="button" value="-" onclick="sizeImg('width', '-')">
+      <br>
+      <input type="button" value="+" onclick="sizeImg('height', '+')">
+      <input type="button" value="-" onclick="sizeImg('height', '-')">
+      <br>
+      <input type="text" class="txt" value="10">
+
+
+      <br><br>
+      <p>
+//Создать кнопку <br>
+function createButton(className, valueButton, functionButton) {<br>
+    var nameButton = document.createElement('input')<br>
+    nameButton.setAttribute('type', 'button')<br>
+    nameButton.setAttribute('class', className)<br>
+    nameButton.setAttribute('onclick', functionButton)<br>
+    nameButton.setAttribute('value', valueButton)<br>
+    return nameButton<br>
+}<br>
+<br>
+function createDOM(event, createObject, createPlace, buttonCreate) {<br>
+    if (createPlace !== "divCreate") {<br>
+        createPlace = document.getElementsByTagName(createPlace)<br>
+    } else {<br>
+        createPlace = document.getElementsByClassName(createPlace)<br>
+    }<br>
+    createObject = document.createElement(createObject)<br>
+    buttonCreate = document.getElementsByClassName(buttonCreate)<br>
+    createObject.innerHTML = "Тест"<br>
+<br>
+    for (var i = 0; i < buttonCreate.length; i++) {<br>
+        if (buttonCreate[i] == event.target) {<br>
+            createPlace[i].appendChild(createObject)<br>
+            //Место для добавления кнопки.. <br>
+            //Кнопка УДАЛИТЬ<br>
+            /**/<br>
+            if (createObject.localName == "ol") {<br>
+                createObject.appendChild(createButton("deleteOl", "Удалить", "deleteObject(event, 'ol')"))<br>
+            }<br>
+            /**/<br>
+            if (createObject.localName == "li") {<br>
+                createObject.appendChild(createButton("deleteLi", "Удалить", "deleteObject(event, 'li')"))<br>
+            }<br>
+            /**/<br>
+            if (createObject.localName == "tr") {<br>
+                createObject.appendChild(createButton("deleteTh", "Удалить", "deleteObject(event, 'tr')"))<br>
+            }<br>
+            /*----------------------------------------------------------------------------------------------------------------------------------------------------------*/<br>
+            //Кнопка ЗАПИСЬ или СПИСОК<br>
+            /**/<br>
+            if (createObject.localName == "ol") {<br>
+                createObject.appendChild(createButton("liRewrite", "Изменить", "rewriteObect(event,'ol')"))
+            }<br>
+            /**/<br>
+            if (createObject.localName == "li") {<br>
+                createObject.appendChild(createButton("olRewrite", "Изменить", "rewriteObect(event,'li')"))<br>
+            }<br>
+            /**/<br>
+            if (createObject.localName == "tr") {<br>
+                createObject.appendChild(createButton("thRewrite", "Изменить", "rewriteObect(event,'tr')"))<br>
+            }<br>
+            /*--------------------------------------------------------------------------------------------------------------------------------------------------------------*/<br>
+            //Кнопка ЗАПИСЬ или СПИСОК<br>
+            /**/<br>
+            if (createObject.localName == "ol") {<br>
+                createObject.appendChild(createButton("liButtonCreate", "Запись", "createDOM(event,'li', 'ol', 'liButtonCreate')"))<br>
+            }<br>
+            /**/<br>
+            if (createObject.localName == "li") {<br>
+                createObject.appendChild(createButton("olButtonCreate", "Список", "createDOM(event,'ol', 'li', 'olButtonCreate')"))<br>
+            }<br>
+            /**/<br>
+            /*--------------------------------------------------------------------------------------------------------------------------------------------------------------*/<br>
+
+<br>
+
+        }<br>
+    }<br>
+}<br>
+//Удалить<br>
+function deleteObject(event, tmp) {<br>
+    tmp = document.getElementsByTagName(tmp)<br>
+    for (var i = 0; i < tmp.length; i++) {<br>
+        if (tmp[i].children[0] == event.target) {<br>
+            tmp[i].remove()<br>
+
+        }<br>
+    }<br>
+}<br>
+
+<br>
+//Изменить<br>
+function rewriteObect(event, tmp) {<br>
+    tmp = document.getElementsByTagName(tmp)<br>
+    for (var i = 0; i < tmp.length; i++) {<br>
+        if (tmp[i].children[1] == event.target) {<br>
+            var s = prompt()<br>
+            if ((s == null) || (s == "")) {<br>
+                tmp[i].childNodes["0"].data = getRandom()<br>
+            } else {<br>
+                tmp[i].childNodes["0"].data = s<br>
+            }<br>
+
+        }<br>
+    }<br>
+}<br>
+<br>
+
+
+//Рандомное число<br>
+function getRandom() {<br>
+    var rand = 1 + Math.random() * (100 + 1 - 1);<br>
+    rand = Math.floor(rand);<br>
+    return rand;<br>
+}<br>
+<br>
+//Сортировка чисел<br>
+function sortArray(change) {<br>
+    var tr = document.getElementsByTagName('tr')<br>
+    var createPlace = document.getElementsByClassName('divCreate')<br>
+    var numbers = []<br>
+    for (var i = 0; i < tr.length; i++) {<br>
+        numbers[i] = tr[i].childNodes["0"].data<br>
+    }<br>
+
+    if (change == "up") {<br>
+        numbers.sort(function(a, b) {<br>
+            return a - b<br>
+        })<br>
+    }<br>
+    if (change == "down") {<br>
+        numbers.sort(function(a, b) {<br>
+            return b - a<br>
+        })<br>
+    }<br>
+
+    for (var i = 0; i < tr.length; i++) {<br>
+        tr[i].childNodes["0"].data = numbers[i]<br>
+    }<br>
+
+}<br>
+      </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="f">
+    <div class="container">
+      <div class="row centered">
+       <a href="https://vk.com/xd_makcum"><i class="fa fa-vk fa-2x"></i></a>
+       <a href="https://www.instagram.com/zvg_m_a/"><i class="fa fa-instagram fa-2x"></i></a>
+     </div>
+   </div>
+ </div>
+
+  <script src="js/laba3.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Web-технологии</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<!Добавление ссылки на источник, при копировании текста с сайта>
+<script> document.oncopy = function () 
+  { var bodyElement = document.body; 
+    var selection = getSelection(); 
+    var href = document.location.href; 
+    var copyright = "<br><br>Взято с сайта: <a href='"+ href +"'>" + href + "</a><br>© Максим Звягинцев"; 
+    var text = selection + copyright; 
+    var divElement = document.createElement('div'); 
+    divElement.style.position = 'absolute'; 
+    divElement.style.left = '-99999px'; 
+    divElement.innerHTML = text; bodyElement.appendChild(divElement); 
+    selection.selectAllChildren(divElement); 
+    setTimeout(function() { bodyElement.removeChild(divElement); }, 0); }; 
+  </script>
+<body>
+ 
+ <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+  	<div class="navbar-header">
+  	 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  	 <span class="icon-bar"></span>
+  	 <span class="icon-bar"></span>
+  	 <span class="icon-bar"></span>
+  	 </button>
+  	<a class="navbar-brand" href="index.html">Web&nbsp;TECHN<i class="fa fa-globe" aria-hidden="true"></i>L<i class="fa fa-globe" aria-hidden="true"></i>GY</a>
+
+  	</div>
+  	
+  	<div class="navbar-collapse collapse">
+  		<ul class="nav navbar-nav navbar-right">
+      <li > <a href="index.html">Главная</a></li>
+      <li> <a href="internet.html">Internet</a></li>
+      <li > <a href="http.html">HTTP</a></li>
+      <li class="active"> <a href="html.html">HTML</a></li>
+      <li> <a href="css.html">CSS</a></li> 
+      <li> <a href="test.html">[Laba 3]</a></li>   
+  		</ul>
+  	</div>
+  </div>
+ </div>
+
+<div id="headerwrap">
+	<div class="container">
+		<div class="row centered">
+			<div class="col-lg-8 col-lg-offset-2">
+     <h1>HTML</h1>
+     <img src="images/html.png" width="15%" height="15%"  align="right" vspace="5" hspace="5"> 
+     <p><b>HTML</b> (от англ. HyperText Markup Language — «язык гипертекстовой разметки») — стандартизированный язык разметки документов во Всемирной паутине. Большинство веб-страниц содержат описание разметки на языке HTML (или XHTML). Язык HTML интерпретируется браузерами; полученный в результате интерпретации форматированный текст отображается на экране монитора компьютера или мобильного устройства.
+<br><br>
+Язык HTML является приложением SGML (стандартного обобщённого языка разметки) и соответствует международному стандарту ISO 8879.
+<br><br>
+Язык XHTML является более строгим вариантом HTML, он следует всем ограничениям XML и, фактически, XHTML можно воспринимать как приложение языка XML к области разметки гипертекста.
+<br><br>
+Во всемирной паутине HTML-страницы, как правило, передаются браузерам от сервера по протоколам HTTP или HTTPS, в виде простого текста или с использованием шифрования.</p>
+<h1>Общее представление</h1>
+<img src="images/html2.png" width="15%" height="15%"  align="right" vspace="5" hspace="5"> 
+<p>Язык HTML был разработан британским учёным Тимом Бернерсом-Ли приблизительно в 1986—1991 годах в стенах ЦЕРНа в Женеве в Швейцарии. HTML создавался как язык для обмена научной и технической документацией, пригодный для использования людьми, не являющимися специалистами в области вёрстки. HTML успешно справлялся с проблемой сложности SGML путём определения небольшого набора структурных и семантических элементов — дескрипторов. Дескрипторы также часто называют «тегами». С помощью HTML можно легко создать относительно простой, но красиво оформленный документ. Помимо упрощения структуры документа, в HTML внесена поддержка гипертекста. Мультимедийные возможности были добавлены позже.
+<br><br>
+Изначально язык HTML был задуман и создан как средство структурирования и форматирования документов без их привязки к средствам воспроизведения (отображения). В идеале, текст с разметкой HTML должен был без стилистических и структурных искажений воспроизводиться на оборудовании с различной технической оснащённостью (цветной экран современного компьютера, монохромный экран органайзера, ограниченный по размерам экран мобильного телефона или устройства и программы голосового воспроизведения текстов). Однако современное применение HTML очень далеко от его изначальной задачи. Например, тег &lttable&gt предназначен для создания в документах таблиц, но часто используется и для оформления размещения элементов на странице. С течением времени основная идея платформонезависимости языка HTML была принесена в жертву современным потребностям в мультимедийном и графическом оформлении.</p>
+
+<h1>Браузеры</h1>
+<img src="images/html3.png" width="15%" height="15%"  align="right" vspace="5" hspace="5"> 
+<p>Текстовые документы, содержащие разметку на языке HTML (такие документы традиционно имеют расширение .html или .htm), обрабатываются специальными приложениями, которые отображают документ в его форматированном виде. Такие приложения, называемые «браузерами» или «интернет-обозревателями», обычно предоставляют пользователю удобный интерфейс для запроса веб-страниц, их просмотра (и вывода на иные внешние устройства) и, при необходимости, отправки введённых пользователем данных на сервер. Наиболее популярными на сегодняшний день браузерами являются Google Chrome, Mozilla Firefox, Opera, Internet Explorer и Safari (см.: Браузер#Рыночные доли).</p>
+
+<h1>Версии</h1>
+<div class="ull">
+  <ul>
+<li>HTML 0.9;</li>
+<li>RFC 1866 — HTML 2.0, одобренный как стандарт 22 сентября 1995 года;</li>
+<li>HTML 3.2[6] — 14 января 1997 года;</li>
+<li>HTML 4.0[7] — 18 декабря 1997 года;</li>
+<li>HTML 4.01[8] (изменения, причём более значительные, чем кажется на первый взгляд) — 24 декабря 1999 года;</li>
+<li>ISO/IEC 15445:2000[9] (так называемый ISO HTML, основан на HTML 4.01 Strict) — 15 мая 2000 года;</li>
+<li>HTML5[10] — 28 октября 2014 года;</li>
+<li>HTML 5.1 начал разрабатываться 17 декабря 2012 года[11][12]. Рекомендован к применению с 1 ноября 2016 года</li>
+  </ul>
+</div>
+
+<h1>Структура HTML-документа</h1>
+<p>HTML — теговый язык разметки документов. Любой документ на языке HTML представляет собой набор элементов, причём начало и конец каждого элемента обозначается специальными пометками — тегами. Элементы могут быть пустыми, то есть не содержащими никакого текста и других данных (например, тег перевода строки <br>). В этом случае обычно не указывается закрывающий тег. Кроме того, элементы могут иметь атрибуты, определяющие какие-либо их свойства (например, размер шрифта для тега <font>). Атрибуты указываются в открывающем теге. 
+Регистр, в котором набрано имя элемента и имена атрибутов, в HTML значения не имеет (в отличие от XHTML). Элементы могут быть вложенными. Например, следующий код:
+<br>
+<br>
+&lt!DOCTYPE html&gt<br>
+&lthtml&gt<br>
+   &lthead&gt<br>
+      &ltmeta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt<br>
+      &lttitle&gtHTML Document&lt/title&gt<br>
+   &lt/head&gt<br>
+   &ltbody&gt<br>
+      &ltp&gt<br>
+         &ltb&gt<br>
+            Этот текст будет полужирным,<br>
+            &lti&gtэтот — ещё и курсивным &lt/i&gt<br>
+         &lt/b&gt<br>
+      &lt/p&gt<br>
+   &lt/body&gt<br>
+&lt/html&gt<br>
+</br>
+<br>
+
+даст такой результат:<br>
+<b>
+Этот текст будет полужирным, 
+<i>а этот — ещё и курсивным</i>
+</b>
+<br><br>
+Кроме элементов, в HTML-документах есть и сущности (англ. entities) — «специальные символы». Сущности начинаются с символа амперсанда и имеют вид &имя; или &#NNNN;, где NNNN — код символа в Юникоде в десятичной системе счисления.
+<br><br>
+Например, &copy; — знак авторского права (©). Как правило, сущности используются для представления символов, отсутствующих в кодировке документа, или же для представления «специальных» символов: &amp; — амперсанда (&), &lt; — символа «меньше» (<) и &gt; — символа «больше» (>), которые некорректно записывать «обычным» образом, из-за их особого значения в HTML.
+<br><br>
+Подробнее по этой теме см. Элементы HTML.
+Подробнее по этой теме см. Википедия:Специальные символы.
+Каждый HTML-документ, отвечающий спецификации HTML какой-либо версии, должен начинаться со строки объявления версии HTML <!DOCTYPE…>, которая обычно выглядит примерно так:
+<br><br>
+<i>
+ &lt!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"<br>
+     "http://www.w3.org/TR/html4/strict.dtd"&gt<br>
+     </i>
+     <br><br>
+</p>
+  <h1>Варианты DOCTYPE для HTML 4.01</h1>
+  <img src="images/html4.png" width="15%" height="15%"  align="right" vspace="5" hspace="5"> 
+<p>Строгий (Strict): не содержит элементов, помеченных как «устаревшие» или «не одобряемые» (deprecated).
+ <i>&lt!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt</i><br>
+<br>
+Переходный (Transitional): содержит устаревшие теги в целях совместимости и упрощения перехода со старых версий HTML.<br>
+ <i>&lt!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"<br>
+     "http://www.w3.org/TR/html4/loose.dtd"&gt</i><br>
+<br>
+С фреймами (Frameset): аналогичен переходному, но содержит также теги для создания наборов фреймов.
+<i> &lt!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"<br>
+     "http://www.w3.org/TR/html4/frameset.dtd"&gt</i><br>
+     </p>
+<h1>Варианты DOCTYPE для HTML 5</h1>
+<img src="images/html5.png" width="15%" height="15%"  align="right" vspace="5" hspace="5"> 
+<p style="height: 120px">В HTML 5 используется только один вариант DOCTYPE:<br>
+<i>&lt!DOCTYPE html&gt</i>
+</p>
+<div class="Avtor">
+<b>(с)Информация взята <a href="https://ru.wikipedia.org/wiki/HTML">с сайта Wikipedia <br></a></b>
+</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="f">
+<div class="container">
+<div class="row centered">
+	<a href="https://vk.com/xd_makcum"><i class="fa fa-vk fa-2x"></i></a>
+	<a href="https://www.instagram.com/zvg_m_a/"><i class="fa fa-instagram fa-2x"></i></a>
+</div>
+</div>
+</div>
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+$(document).ready(function(){
+ $.fn.animate_Text = function() {
+  var string = this.text();
+  return this.each(function(){
+   var $this = $(this);
+   $this.html(string.replace(/./g, '<span class="new">$&</span>'));
+   $this.find('span.new').each(function(i, el){
+    setTimeout(function(){ $(el).addClass('div_opacity'); }, 20 * i);
+   });
+  });
+ };
+ $('#example').show();
+ $('#example').animate_Text();
+});
+</script>
+</body>
+</html>
